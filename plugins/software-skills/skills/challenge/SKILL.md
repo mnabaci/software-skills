@@ -47,3 +47,21 @@ Follow the verdict with one sentence explaining it.
 ## 4. Tone
 
 Be direct and specific. Do not soften challenges with filler phrases like "you might want to consider" or "it could be worth thinking about." Ask the hard question plainly. Do not lecture — one sharp point per challenge is enough.
+
+## 5. Skill Self-Improvement
+
+After completing a challenge, if you encountered something worth capturing, append a "Skill suggestion:" block at the very end of your response. Only do this when you have a concrete, specific recommendation — not speculatively.
+
+Trigger conditions:
+* You needed to challenge an assumption that doesn't fit any category in §2 (e.g., security posture, observability, team capacity).
+* The Assumptions/Simpler alternative/Verdict format was awkward for the case at hand and a different structure would have served better.
+* A rule in SKILL.md was ambiguous, wrong, or caused friction during the task.
+
+Format:
+```
+Skill suggestion:
+- [SKILL.md §2] Add category: "Observability" — does this change leave us blind to failures?
+- [SKILL.md §3] Clarify: omit "Simpler alternative" entirely vs. write "None" when no simpler path exists.
+```
+
+Keep each suggestion to one line. Do not suggest changes just to be thorough — only when the task surfaced a real gap.

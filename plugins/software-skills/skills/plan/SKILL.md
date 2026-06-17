@@ -54,3 +54,21 @@ Ordered list of discrete implementation steps. Each step should be actionable an
 * **Mirror the codebase:** The plan must fit the existing architecture, patterns, and conventions — not an idealized version of them.
 * **Flag don't fix:** If you spot adjacent issues while reading the code, note them under risks — do not fold them into the plan.
 * **No speculative steps:** Every step in the plan must be necessary. Remove steps that are "nice to have" or cover hypothetical future needs.
+
+## 5. Skill Self-Improvement
+
+After completing a plan, if you encountered something worth capturing, append a "Skill suggestion:" block at the very end of your response. Only do this when you have a concrete, specific recommendation — not speculatively.
+
+Trigger conditions:
+* The plan needed a section not covered by the format in §3 (e.g., migration strategy, rollback plan, feature-flagging) and you had to improvise.
+* The codebase uses a technology with no reference file in the `code` skill (e.g., Python, Go, Svelte).
+* A rule in SKILL.md or a loaded ref file was ambiguous, wrong, or caused friction during planning.
+
+Format:
+```
+Skill suggestion:
+- [SKILL.md §3] Add section: "Rollback plan" — needed for this migration but no standard slot for it.
+- [New ref] Python detected — consider creating refs/python.md.
+```
+
+Keep each suggestion to one line. Do not suggest changes just to be thorough — only when the task surfaced a real gap.
