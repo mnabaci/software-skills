@@ -1,0 +1,18 @@
+{
+  "name": "software-skills",
+  "displayName": "Software Skills",
+  "owner": {
+    "name": "Mehmet Abaci"
+  },
+  "plugins": [
+    {
+      "name": "software-skills",
+      "source": "./plugins/software-skills",
+      "displayName": "Software Skills",
+      "description": "Custom skills for code quality, planning, and critical thinking",
+      "author": {
+        "name": "Mehmet Abaci"
+      }
+    }
+  ]
+}
