@@ -1,0 +1,29 @@
+{
+  "description": "Advisory model-tier mismatch check. Replaces the /route skill, which rarely self-triggered since it depended on the model choosing to consult it mid-task. This caches the active model at session start and checks each prompt deterministically instead.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/route-session-start.sh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/route-prompt-check.sh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
