@@ -1,5 +1,5 @@
 {
-  "description": "Advisory model-tier mismatch check. Replaces the /route skill, which rarely self-triggered since it depended on the model choosing to consult it mid-task. This caches the active model at session start and checks each prompt deterministically instead.",
+  "description": "Advisory model-tier mismatch check (SessionStart/UserPromptSubmit) and a pre-commit README/version reminder (PreToolUse). Both are deterministic shell heuristics with no LLM call, so they run on every prompt/commit without burning tokens - they just surface a systemMessage and let Claude make the actual judgment call.",
   "hooks": {
     "SessionStart": [
       {
@@ -20,6 +20,18 @@
           {
             "type": "command",
             "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/route-prompt-check.sh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/commit-readme-version-check.sh\"",
             "timeout": 5
           }
         ]

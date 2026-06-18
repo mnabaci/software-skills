@@ -2,7 +2,7 @@
   "name": "software-skills",
   "displayName": "Software Skills",
   "description": "Custom skills for code quality, planning, and critical thinking",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Mehmet Abaci"
   },
