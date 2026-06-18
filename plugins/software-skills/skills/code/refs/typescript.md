@@ -8,3 +8,5 @@
 - Prefer `interface` for object shapes and `type` for unions, intersections, and primitives.
 - Never use `var`; use `const` by default, `let` only when reassignment is required.
 - Avoid enums — prefer `as const` object literals or union types for better tree-shaking and interop.
+- Use `satisfies` instead of `as` when you want to validate a value against a type without widening it.
+- Prefer `readonly` arrays (`readonly T[]` or `ReadonlyArray<T>`) for data that should not be mutated after creation.

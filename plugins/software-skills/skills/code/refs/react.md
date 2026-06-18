@@ -8,3 +8,5 @@
 - Avoid using array index as a `key` prop when the list can reorder or items can be added/removed.
 - Do not fetch data inside a render or without cleanup in `useEffect`.
 - Avoid deeply nested component trees inside a single file; extract sub-components when a component exceeds ~100 lines.
+- Do not type components as `React.FC` — it implicitly adds `children` and obscures the return type; use plain function syntax with an explicit return type.
+- Do not reach for `Context` to avoid prop-drilling across 1-2 levels; reserve it for genuinely cross-cutting concerns (auth, theme, locale).
